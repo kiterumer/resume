@@ -1,5 +1,5 @@
 body {
-    background: #222831;
+    background: #f9f7f7;
     margin: 0;
 }
 a {
@@ -15,6 +15,12 @@ hr{
     border: none;
     border-top: 1px solid #dedede;
 }
+ul,ol{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 /* 清除浮动 */
 .clearfix::after {
     content:'';
@@ -22,11 +28,13 @@ hr{
     clear: both;
 }
 .topNavBar {
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 .topNavBar-inner{
     padding:0 16px;
@@ -46,7 +54,7 @@ hr{
 }
 .topNavBar nav > ul > li > a {
     font-size: 12px;
-    color: #b7b7b7;
+    color: #fff;
     font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
@@ -59,9 +67,10 @@ hr{
 }
 .topNavBar .logo {
     font-size: 24px;
-    font-family:'Arial Black';
+    font-family:'微软雅黑';
     padding-top: 3px;
     padding-bottom: 4px;
+    font-weight: 600;
 }
 .topNavBar .logo .rs {
     margin-right: 4px;
@@ -73,21 +82,23 @@ hr{
 
 /* 背景图及遮罩 */
 .banner{
-    background-image: url(./images/rs-cover.jpg);
+    background-image: url(./images/banner.jpg);
     height: 515px;
-    background-position: center center;
-    background-size: cover;
+    background-size: contain;
 }
 .banner .mask{
     height:515px;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,.7);
 }
 
+/*个人信息卡片*/
 .userCard{
-    max-width: 940px;
+    max-width: 940px; /*用max-width更好*/
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;/*居中*/
     background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
 }
 .userCard .welcome{
     background:#e6686a;
@@ -97,7 +108,9 @@ hr{
     line-height: 22px;
     position: relative;
     margin-bottom: 10px;
+    border-radius: 3px;
 }
+/*制作hello下的小三角形*/
 .userCard .welcome .triangle{
     display: block;
     border: 10px solid transparent;
@@ -108,6 +121,7 @@ hr{
     left: 4px;
     top: 100%;
 }
+/*左边个人照片，浮动*/
 .userCard .picture{
     float: left;
 }
@@ -131,17 +145,19 @@ hr{
     padding: 5px 0;
 }
 .userCard dl dt{
-    width: 30%;
+    width: 40%;
     font-weight: bold;
 }
 .userCard dl dd{
-    width: 70%;
+    width: 60%;
     color: #9da0a7;
 }
-
+/*卡片底部媒体栏*/
 .userCard > footer.media{
     background: #E6686A;
-  text-align: center;
+    text-align: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 .userCard > footer.media > a{
   display: inline-block;
@@ -151,6 +167,7 @@ hr{
   border-radius: 50%;
   margin: 16px;
 }
+/*设置鼠标悬浮效果*/
 .userCard > footer.media > a:hover{
   background: #CF5D5F;
 }
@@ -161,3 +178,176 @@ hr{
   vertical-align: top;
 }
 
+/*卡片上移*/
+.mainContent{
+    margin-top: -340px;
+}
+.mainContent .downloadResume-wrapper{
+    text-align: center;
+}
+.mainContent .downloadResume{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    display: inline-block;
+    border-radius: 6px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 32px 0;
+    transition: box-shadow 0.2s;
+}
+/*点击下载按钮阴影效果*/
+.mainContent .downloadResume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,.2);
+}
+
+/*简短介绍*/
+.selfIntroduction{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 20px;
+    font-family: "楷体";
+}
+
+.skills,.portfolio{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+.skills > h2,.portfolio > h2{
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.skills h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+.skills > ol{
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,.3);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+    border-radius: 6px;
+}
+.skills > ol > li{
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+.skills > ol > li:nth-child(even){
+    float: right;
+}
+.skills .progressBar{
+    height: 5px;
+    background-color: #fae1e1;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+}
+.skills .progressBar > .progress{
+    height: 100%;
+    background-color: #e6686a;
+    width: 70%;
+    border-radius: 2px;
+}
+
+/*作品集*/
+.portfolio{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.portfolio > nav{
+    text-align: center;
+}
+.portfolio > nav > ol{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;  /* 消除使用inline-block的不对齐问题*/   
+}
+.portfolio > nav > ol > li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.portfolio > nav > ol > li:first-child{
+    margin-left: 0;
+}
+
+.portfolio > nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+/*滑动栏*/
+.portfolio > nav .bar{
+    height: 5px;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+.portfolio > nav .bar-inner{
+    height: 100%;
+    background-color: #e6686a;
+    border-radius: 2px;
+    transition: all 0.3s; /*滑动过度效果*/
+}
+/*状态机*/
+.portfolio > nav .bar.state-1 .bar-inner{
+  margin-left: 0;
+  width: 50px;
+}
+.portfolio > nav .bar.state-2 .bar-inner{
+  margin-left: 65px;
+  width: 50px;
+}
+.portfolio > nav .bar.state-3 .bar-inner{
+  margin-left: 140px;
+  width: 96px;
+}
+.portfolio .works{
+    height: 597px;
+    position: relative;
+}
+.big,.small1,.small2{
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,.3)
+}
+.big{
+    background-image: url(images/1.jpg);
+    background-size: cover;
+    width:606px;
+    height: 600px;
+    top: 0;
+    left: 0;
+}
+.small1{
+    background-image: url(images/2.jpg);
+    background-size: cover;
+    width: 290px;
+    height: 288px;
+    top: 0;
+    left: 645px;
+}
+.small2{
+    background-image: url(images/3.jpg);
+    background-size: cover;
+    width: 290px;
+    height: 288px;
+    top: 312px;
+    left: 645px;
+}
